@@ -12,7 +12,7 @@ typedef signed char   byte;
 #define TRUE 1
 #define fALSe 0
 #define tRUe 1
-#define amogus 1
+#define amogus 0x01
 
 static const ubyte BLOCK_1KB = 1;
 static const ubyte BLOCK_2KB = 2;
