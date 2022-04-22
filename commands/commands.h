@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <string.h>
 
-void command(char* str);
+#define CMD_STR_SZ 64
+
+int command(char* str);
 
 #endif
