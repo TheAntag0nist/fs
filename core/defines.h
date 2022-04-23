@@ -12,11 +12,16 @@ typedef signed char   byte;
 #define TRUE 1
 #define fALSe 0
 #define tRUe 1
-#define amogus 0x01
 
+#define null 0
+
+// in Kb
 static const ubyte BLOCK_1KB = 1;
 static const ubyte BLOCK_2KB = 2;
 static const ubyte BLOCK_4KB = 4;
 static const ubyte BLOCK_8KB = 8;
+
+// in bytes
+static const ubyte MBR_SZ = 1024;
 
 #endif // DEFINES_H

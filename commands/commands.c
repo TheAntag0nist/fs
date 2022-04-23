@@ -8,7 +8,7 @@ int command(char* str){
     }
 
     if(!strcmp(str, "--open_fs")){
-        
+
         return 1;
     }
 
