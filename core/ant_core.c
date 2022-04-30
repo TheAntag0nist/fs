@@ -6,12 +6,9 @@ int create_fs(char* name,int blocks_cnt, int block_sz){
     fs.fl = null;
     
     // save name
-    if(!strcmp(name, "")){
-        // if error
-        // return empty fs
-        // and not create
+    if(!strcmp(name, ""))
         return 1;
-    }else{
+    else{
         // rewrite with strncpy
         strcpy(fs.name, name);
         printf("FS_NAME -> %s\n", fs.name);

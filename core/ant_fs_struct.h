@@ -6,8 +6,7 @@
 #include "defines.h"
 
 // rewrite name as pointer + size (dynamic string)
-typedef struct ant_fs_struct
-{
+typedef struct ant_fs_struct{
     FILE* fl;
     char name[PATH_SZ];
 } ant_fs_struct;
