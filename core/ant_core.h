@@ -7,11 +7,11 @@
 #include "ant_helpers.h"
 #include "defines.h"
 
-ant_fs_struct create_fs(char* name, int blocks_cnt, int block_sz);
-int delete_fs(ant_fs_struct fs);
+int create_fs(char* name, int blocks_cnt, int block_sz);
+int delete_fs(ant_fs_struct* fs);
 
-int open_fs(ant_fs_struct fs);
-int close_fs(ant_fs_struct fs);
+ant_fs_struct open_fs(char* fs_src);
+int close_fs(ant_fs_struct* fs);
 
 int write_fl(ant_fs_struct fs, char* data, int size);
 int move_fl(ant_fs_struct fs, char* src, char* dest);

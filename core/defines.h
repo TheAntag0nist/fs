@@ -10,18 +10,24 @@ typedef signed char   byte;
 #define True 1
 #define FALSE 0
 #define TRUE 1
-#define fALSe 0
-#define tRUe 1
 
 #define null 0
 
 // in Kb
-static const ubyte BLOCK_1KB = 1;
-static const ubyte BLOCK_2KB = 2;
-static const ubyte BLOCK_4KB = 4;
-static const ubyte BLOCK_8KB = 8;
+#define BLOCK_1KB 1
+#define BLOCK_2KB 2
+#define BLOCK_4KB 4
+#define BLOCK_8KB 8
 
-// in bytes
-static const ubyte MBR_SZ = 1024;
+// command string max size
+#define CMD_STR_SZ 64
+// basic fs name size
+#define FS_NAME 64
+// basic path size
+#define PATH_SZ 1024
+// basic blocks size
+#define DEFAULT_BLOCKS_SZ 1024
+// basic MBR_SIZE
+#define MBR_SZ 1024
 
 #endif // DEFINES_H

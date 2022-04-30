@@ -1,10 +1,13 @@
 #include "log/logger.h"
 #include "commands/commands.h"
 #include "core/defines.h"
+#include <locale.h>
 
 int main(void){ 
     char cmd[CMD_STR_SZ];
     int res = 0;
+
+    setlocale(LC_ALL, "");
 
     while(true){
         printf("ant:> ");

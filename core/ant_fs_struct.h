@@ -3,12 +3,13 @@
 #include <stdio.h>
 #include <stdint.h>
 
-#define FS_NAME 64
+#include "defines.h"
 
+// rewrite name as pointer + size (dynamic string)
 typedef struct ant_fs_struct
 {
     FILE* fl;
-    char name[FS_NAME];
+    char name[PATH_SZ];
 } ant_fs_struct;
 
 

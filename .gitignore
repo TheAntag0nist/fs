@@ -1,3 +1,6 @@
+# FS files
+*.ant
+
 # Prerequisites
 *.d
 
