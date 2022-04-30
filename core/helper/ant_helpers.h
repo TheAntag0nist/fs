@@ -3,10 +3,10 @@
 #include <stdio.h>
 #include <malloc.h>
 
-#include "fs_parts/ant_super.h"
-#include "fs_parts/ant_inode.h"
-#include "fs_parts/ant_gdt.h"
-#include "defines.h"
+#include "../fs_parts/ant_super.h"
+#include "../fs_parts/ant_inode.h"
+#include "../fs_parts/ant_gdt.h"
+#include "../defines.h"
 
 ////////////////////////////
 //      global helper

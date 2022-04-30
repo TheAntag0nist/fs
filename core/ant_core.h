@@ -4,7 +4,7 @@
 #include <string.h>
 
 #include "fs_parts/ant_fs_struct.h"
-#include "ant_helpers.h"
+#include "helper/ant_helpers.h"
 #include "defines.h"
 
 int create_fs(char* name, int blocks_cnt, int block_sz);

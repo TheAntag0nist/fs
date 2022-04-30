@@ -31,6 +31,7 @@ int create_fs(char* name,int blocks_cnt, int block_sz){
     }
 
     fclose(fs.fl);
+    return 0;
 }
 
 int delete_fs(ant_fs_struct* fs){ 
