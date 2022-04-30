@@ -72,28 +72,49 @@ int command(char* str){
         return 1;
     }
 
+    if(!strcmp(str, "--clear") || !strcmp(str, "-clear") 
+        || !strcmp(str, "/clear")){
+        clear_cmd();
+        return 1;
+    }
+
     if(!strcmp(str, "--exit") || !strcmp(str, "--close") 
         || !strcmp(str, "-exit") || !strcmp(str, "-close") 
-        || !strcmp(str, "/exit") || !strcmp(str, "/close"))
+        || !strcmp(str, "/exit") || !strcmp(str, "/close")){
+        close_fs(&curr_fs);
         return 0;
+    }
 
     // error or unknown command
     return -1;
 }
 
 int help_cmd(){
-printf("\t--help- display that data\n");
+    printf("\t--help- display that data\n");
     printf("\t--open_fs - open fs\n");
     printf("\t--create_fs - create fs\n");
     printf("\t--delete_fs - delete fs\n");
     printf("\t--close_fs - close current fs\n");
 	
+    delimiter('=', 50);
 	printf("\t--open_dir - open directory\n");
     printf("\t--create_dir - create directory\n");
     printf("\t--delete_dir - delete directory\n");
     printf("\t--close_dir - close current directory\n");
 	
+    delimiter('=', 50);
+    printf("\t--clear - clear console\n");
     printf("\t--exit - close provider\n");
+    return 0;
+}
+
+int clear_cmd(){
+#ifdef unix
+        system("clear");
+#else
+        system("cls");
+#endif
+    return 0;
 }
 
 // maybe be rewritten 
@@ -101,13 +122,17 @@ int open_fs_cmd(){
     char temp_str[PATH_SZ];
     temp_str[0] = '\0';
 
-    printf("FS file: ");
+    printf("\tFS file: ");
     scanf("%s", temp_str);
 
     if(curr_fs.fl != null)
         close_fs(&curr_fs);
 
     curr_fs = open_fs(temp_str);
+    if(curr_fs.fl != null)
+        info("successfully open filesystem");
+    else
+        error("can't open filesystem");
 
     return 0;
 }
@@ -133,12 +158,24 @@ int create_fs_cmd(){
 
 // maybe be rewritten 
 int delete_fs_cmd(){
-    return delete_fs(&curr_fs);
+    int res = delete_fs(&curr_fs);
+    if(!res)
+        info("delete filesystem");
+    else
+        error("can't delete filesystem");
+
+    return res;
 }
 
 // maybe be rewritten 
 int close_fs_cmd(){
-    return close_fs(&curr_fs);
+    int res = close_fs(&curr_fs);
+    if(!res)
+        info("close filesystem");
+    else
+        error("error on close filesystem");
+
+    return res;
 }
 
 int create_dir_cmd(){

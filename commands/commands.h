@@ -1,7 +1,8 @@
 #ifndef COMMANDS_H
 #define COMMANDS_H
-#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 #include "../core/ant_core.h"
 #include "../core/defines.h"
@@ -13,6 +14,7 @@ static ant_fs_struct curr_fs;
 int command(char* str);
 
 int help_cmd();
+int clear_cmd();
 int open_fs_cmd();
 int create_fs_cmd();
 int delete_fs_cmd();

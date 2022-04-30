@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <time.h>
 
+#include "../fs_parts/ant_bitmaps.h"
 #include "../fs_parts/ant_super.h"
 #include "../fs_parts/ant_inode.h"
 #include "../fs_parts/ant_gdt.h"
@@ -50,4 +51,9 @@ int create_inodes_table(FILE* fl);
 mode get_mode(ant_inode inode);
 void set_mode(ant_inode* inode, mode md);
 void write_inode(FILE* fl, ant_inode inode);
+////////////////////////////
+//      data section helper
+////////////////////////////
+int create_empty_offset(FILE* fl, int bytes);
+int create_data_section(FILE* fl, int section_sz);
 #endif

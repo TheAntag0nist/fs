@@ -8,6 +8,9 @@ int main(void){
     int res = 0;
 
     setlocale(LC_ALL, "");
+    // default info
+    info("Start FileSYstem Program");
+    help_cmd();
 
     while(true){
         printf("ant:> ");
@@ -18,10 +21,9 @@ int main(void){
         if(res == -1)
             warning("Incorrect command");
         else if(res == 0){
-            info("Close FileSystem");
+            info("Close FileSystem Program");
             break;
         }
     }
-
     return  0;
 }

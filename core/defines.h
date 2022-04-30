@@ -19,6 +19,8 @@ typedef signed char   byte;
 #define BLOCK_4KB 4
 #define BLOCK_8KB 8
 
+#define BYTES_1KB 1024
+
 // command string max size
 #define CMD_STR_SZ 64
 // basic fs name size
@@ -30,6 +32,8 @@ typedef signed char   byte;
 #define DEFAULT_BLOCKS_SZ 1024
 // basic MBR_SIZE
 #define MBR_SZ 1024
+// inode rows in table
+#define INODE_ROWS_NUM 11 
 
 
 enum block_status{

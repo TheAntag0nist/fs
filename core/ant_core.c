@@ -52,7 +52,11 @@ ant_fs_struct open_fs(char* fs_src){
 }
 
 int close_fs(ant_fs_struct* fs){
-    return fclose(fs->fl);
+    if(fs != null)
+        if(fs->fl != null)
+        return fclose(fs->fl);
+    else
+        return -1;
 }
 
 int open_fl(ant_fs_struct fs, char* fl_name){}
