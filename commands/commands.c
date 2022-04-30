@@ -7,6 +7,7 @@ int command(char* str){
         return 1;
     }
 
+    // filesystem commands
     if(!strcmp(str, "--open_fs")){
         open_fs_cmd();
         return 1;
@@ -24,6 +25,38 @@ int command(char* str){
 
     if(!strcmp(str, "--close_fs")){
         close_fs_cmd();
+        return 1;
+    }
+
+    // commands in filesystem
+    // check fs in functions
+    if(!strcmp(str, "--create_dir")){
+
+        return 1;
+    }
+
+    if(!strcmp(str, "--create_file")){
+
+        return 1;
+    }
+
+    if(!strcmp(str, "--open_dir")){
+
+        return 1;
+    }
+
+    if(!strcmp(str, "--open_file")){
+
+        return 1;
+    }
+
+    if(!strcmp(str, "--delete_dir")){
+
+        return 1;
+    }
+
+    if(!strcmp(str, "--delete_file")){
+
         return 1;
     }
 
@@ -86,4 +119,34 @@ int delete_fs_cmd(){
 // maybe be rewritten 
 int close_fs_cmd(){
     return close_fs(&curr_fs);
+}
+
+int create_dir_cmd(){
+
+    return 0;
+}
+
+int create_file_cmd(){
+
+    return 0;
+}
+
+int open_dir_cmd(){
+
+    return 0;
+}
+
+int open_file_cmd(){
+
+    return 0;
+}
+
+int delete_dir_cmd(){
+
+    return 0;
+}
+
+int delete_file_cmd(){
+
+    return 0;
 }

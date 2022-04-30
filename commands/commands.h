@@ -18,4 +18,10 @@ int create_fs_cmd();
 int delete_fs_cmd();
 int close_fs_cmd();
 
+int create_dir_cmd();
+int create_file_cmd();
+int open_dir_cmd();
+int open_file_cmd();
+int delete_dir_cmd();
+int delete_file_cmd();
 #endif

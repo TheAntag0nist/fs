@@ -41,6 +41,7 @@ ant_fs_struct open_fs(char* fs_src){
 
     return ant_fs;
 }
+
 int close_fs(ant_fs_struct* fs){
     return fclose(fs->fl);
 }
