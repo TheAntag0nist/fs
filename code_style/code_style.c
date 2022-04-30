@@ -22,3 +22,43 @@
         data_1,
         data_2
     };
+	
+	
+
+
+6. Циклы
+6.1 while (sum < const){ 
+		sum = variable_1 + variable_2;
+		variable_1 -= variable_2;
+	}
+	
+6.2 do{
+		sum = variable_1 + variable_2;
+		variable_1 -= variable_2;
+	} while (sum < const);
+	
+6.3 for (int i=1; i<=k; i++){
+		sum -= i;
+		variable_1 = sum%2;
+	}
+
+	
+7. Условные операторы
+7.1 if (variable_1 != 0){
+		variable_1 -= variable_2;
+		variable_2 += 15; 
+	} else
+		variable_1 += variable_2;
+	
+7.2 switch (sum){
+		case 0:
+			descending_sum;
+			break;
+		case 1:
+			ascending_sum;
+			break;
+		default:
+			unchanged_sum;
+	}		
+
+		
