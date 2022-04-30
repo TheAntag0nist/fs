@@ -17,6 +17,9 @@ int create_fs(char* name,int blocks_cnt, int block_sz){
     // min blocks count
     if(blocks_cnt < 1024)
         blocks_cnt = 1024;
+    // not use 1Kb blocks
+    if(block_sz <= BLOCK_1KB)
+        block_sz = BLOCK_2KB;
 
     help_data.blocks_cnt = blocks_cnt;
     help_data.block_sz = block_sz;

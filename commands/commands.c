@@ -150,7 +150,7 @@ int create_fs_cmd(){
     printf("\tBlock Number: ");
     scanf("%d", &block_cnt);
     
-    printf("\tBlock Size (1, 2, 4, 8): ");
+    printf("\tBlock Size (2, 4, 8): ");
     scanf("%d", &block_sz);
     
     return create_fs(temp_str, block_cnt, block_sz);
