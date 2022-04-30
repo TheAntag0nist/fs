@@ -15,7 +15,7 @@ typedef struct mode{
 // 88 BYTES
 typedef struct ant_inode {
     // name and access
-    char ant_name[MAX_LEN];
+    char ant_name[FL_NAME];
     // type and access
     // 7 6 5 4 3 2 1 0
     //  GRP | USER| TYPE
