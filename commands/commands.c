@@ -2,65 +2,79 @@
 
 // write checks
 int command(char* str){
-    if(!strcmp(str, "--help")){
+    if(!strcmp(str, "--help") || !strcmp(str, "-help") 
+        || !strcmp(str, "/help")){
         help_cmd();
         return 1;
     }
 
     // filesystem commands
-    if(!strcmp(str, "--open_fs")){
+    if(!strcmp(str, "--open_fs") || !strcmp(str, "-open_fs") 
+        || !strcmp(str, "/open_fs")){
         open_fs_cmd();
         return 1;
     }
 
-    if(!strcmp(str, "--create_fs")){
+    if(!strcmp(str, "--create_fs") || !strcmp(str, "-create_fs") 
+        || !strcmp(str, "/create_fs")){
         create_fs_cmd();
         return 1;
     }
 
-    if(!strcmp(str, "--delete_fs")){
+    if(!strcmp(str, "--delete_fs") || !strcmp(str, "-delete_fs") 
+        || !strcmp(str, "/delete_fs")){
         delete_fs_cmd();
         return 1;
     }
 
-    if(!strcmp(str, "--close_fs")){
+    if(!strcmp(str, "--close_fs") || !strcmp(str, "-close_fs") 
+        || !strcmp(str, "/close_fs")){
         close_fs_cmd();
         return 1;
     }
+	
 
     // commands in filesystem
     // check fs in functions
-    if(!strcmp(str, "--create_dir")){
+    if(!strcmp(str, "--create_dir") || !strcmp(str, "-create_dir") 
+        || !strcmp(str, "/create_dir")){
 
         return 1;
     }
 
-    if(!strcmp(str, "--create_file")){
+    if(!strcmp(str, "--create_file") || !strcmp(str, "-create_file") 
+        || !strcmp(str, "/create_file")){
 
         return 1;
     }
 
-    if(!strcmp(str, "--open_dir")){
+	if(!strcmp(str, "--delete_file") || !strcmp(str, "-delete_file") 
+        || !strcmp(str, "/delete_file")){
 
         return 1;
     }
 
-    if(!strcmp(str, "--open_file")){
+    if(!strcmp(str, "--open_dir") || !strcmp(str, "-open_dir") 
+        || !strcmp(str, "/open_dir")){
 
         return 1;
     }
 
-    if(!strcmp(str, "--delete_dir")){
+    if(!strcmp(str, "--open_file") || !strcmp(str, "-open_file") 
+        || !strcmp(str, "/open_file")){
 
         return 1;
     }
 
-    if(!strcmp(str, "--delete_file")){
+    if(!strcmp(str, "--delete_dir") || !strcmp(str, "-delete_dir") 
+        || !strcmp(str, "/delete_dir")){
 
         return 1;
     }
 
-    if(!strcmp(str, "--exit") || !strcmp(str, "--close"))
+    if(!strcmp(str, "--exit") || !strcmp(str, "--close") 
+        || !strcmp(str, "-exit") || !strcmp(str, "-close") 
+        || !strcmp(str, "/exit") || !strcmp(str, "/close"))
         return 0;
 
     // error or unknown command
@@ -68,11 +82,17 @@ int command(char* str){
 }
 
 int help_cmd(){
-    printf("\t--help - display that data\n");
+printf("\t--help- display that data\n");
     printf("\t--open_fs - open fs\n");
     printf("\t--create_fs - create fs\n");
     printf("\t--delete_fs - delete fs\n");
     printf("\t--close_fs - close current fs\n");
+	
+	printf("\t--open_dir - open directory\n");
+    printf("\t--create_dir - create directory\n");
+    printf("\t--delete_dir - delete directory\n");
+    printf("\t--close_dir - close current directory\n");
+	
     printf("\t--exit - close provider\n");
 }
 

@@ -46,10 +46,13 @@ int close_fs(ant_fs_struct* fs){
     return fclose(fs->fl);
 }
 
-int write_fl(ant_fs_struct fs, char* data, int size){}
+int open_fl(ant_fs_struct fs, char* fl_name){}
+int create_fl(ant_fs_struct fs, char* fl_name){}
+int read_fl(ant_fs_struct fs, char* fl_name){}
+int write_fl(ant_fs_struct fs, char* fl_name, char* data, int size){}
+int delete_fl(ant_fs_struct fs, char* fl_name){}
+int close_fl(ant_fs_struct fs, char* fl_name){}
 int move_fl(ant_fs_struct fs, char* src, char* dest){}
-int delete_fl(ant_fs_struct fs, char* name){}
-int read_fl(ant_fs_struct fs, char* name){}
 
 int create_dir(ant_fs_struct fs){}
 int close_dir(ant_fs_struct fs){}
