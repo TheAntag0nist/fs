@@ -6,6 +6,7 @@
 
 #define MAX_LEN 32
 
+// 1 BYTE
 typedef struct mode{
     char type : 2;
     char usr_access : 3;
@@ -13,6 +14,7 @@ typedef struct mode{
 } mode;
 
 // based on ext2 fs
+// 160 BYTES
 typedef struct ant_inode {
     // name and access
     char ant_name[MAX_LEN];
