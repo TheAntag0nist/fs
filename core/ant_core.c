@@ -18,6 +18,9 @@ int create_fs(char* name,int blocks_cnt, int block_sz){
     if(blocks_cnt < 1024)
         blocks_cnt = 1024;
 
+    help_data.blocks_cnt = blocks_cnt;
+    help_data.block_sz = block_sz;
+
     // create fs file
     fs.fl = fopen(fs.name, "wb");
     if(fs.fl != null){
@@ -25,8 +28,9 @@ int create_fs(char* name,int blocks_cnt, int block_sz){
         // now can be just skipped
         create_mbr(fs.fl);
 
-        for(int i = 0; i < blocks_cnt; ++i){
+        for(int ind = 0; ind < blocks_cnt; ++ind){
             // create block
+            create_block(fs.fl, ind);
         }
     }
 
