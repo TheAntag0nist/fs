@@ -1,6 +1,5 @@
 #ifndef SUPER_H
 #define SUPER_H
-
 #include <stdint.h>
 
 typedef struct ant_superblock {

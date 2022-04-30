@@ -11,5 +11,4 @@ struct ant_gdt_record {
     int8_t block_status;
 };
 
-
 #endif

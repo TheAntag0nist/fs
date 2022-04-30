@@ -3,9 +3,9 @@
 #include <stdio.h>
 #include <malloc.h>
 
-#include "ant_super.h"
-#include "ant_inode.h"
-#include "ant_gdt.h"
+#include "fs_parts/ant_super.h"
+#include "fs_parts/ant_inode.h"
+#include "fs_parts/ant_gdt.h"
 #include "defines.h"
 
 ////////////////////////////

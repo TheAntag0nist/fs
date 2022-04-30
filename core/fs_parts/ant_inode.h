@@ -2,7 +2,7 @@
 #define INODE_H
 
 #include <stdint.h>
-#include "defines.h"
+#include "../defines.h"
 
 #define MAX_LEN 32
 

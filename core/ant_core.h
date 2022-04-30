@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "ant_fs_struct.h"
+#include "fs_parts/ant_fs_struct.h"
 #include "ant_helpers.h"
 #include "defines.h"
 

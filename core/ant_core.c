@@ -14,6 +14,10 @@ int create_fs(char* name,int blocks_cnt, int block_sz){
         printf("FS_NAME -> %s\n", fs.name);
     }
 
+    // min blocks count
+    if(blocks_cnt < 1024)
+        blocks_cnt = 1024;
+
     // create fs file
     fs.fl = fopen(fs.name, "wb");
     if(fs.fl != null){
