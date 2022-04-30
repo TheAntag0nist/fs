@@ -32,7 +32,8 @@ void message( const char* msg, msg_types type){
     {
         case NONE:
         #ifdef unix
-            set_color(GREEN);
+            //set_color(GREEN);
+            printf(BOLD F_GREEN);
         #endif
             strcat(temp_str, "[ ");
             strcat(temp_str, curr_date_time());
@@ -41,7 +42,8 @@ void message( const char* msg, msg_types type){
             break;
         case INFO:
         #ifdef unix
-            set_color(GREEN);
+            //set_color(GREEN);
+            printf(BOLD F_GREEN);
         #endif
             strcat(temp_str, "[ INF ");
             strcat(temp_str, curr_date_time());
@@ -50,7 +52,8 @@ void message( const char* msg, msg_types type){
             break;
         case WARN:
         #ifdef unix
-            set_color(YELLOW);
+            //set_color(YELLOW);
+            printf(BOLD F_YELLOW);
         #endif
             strcat(temp_str, "[ WRN ");
             strcat(temp_str, curr_date_time());
@@ -59,7 +62,8 @@ void message( const char* msg, msg_types type){
             break;
         case ERROR:
         #ifdef unix
-            set_color(RED);
+            //set_color(RED);
+            printf(BOLD F_RED);
         #endif
             strcat(temp_str, "[ ERR ");
             strcat(temp_str, curr_date_time());
@@ -73,7 +77,8 @@ void message( const char* msg, msg_types type){
     printf("%s\t", msg_type_str);
 
     #ifdef unix
-        reset_color();
+        //reset_color();
+        printf(RESET);
     #endif
 
     printf("%s\n", msg);

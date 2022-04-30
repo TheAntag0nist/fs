@@ -6,6 +6,7 @@
 #include "../defines.h"
 
 // rewrite name as pointer + size (dynamic string)
+// 1032 BYTE
 typedef struct ant_fs_struct{
     FILE* fl;
     char name[PATH_SZ];
