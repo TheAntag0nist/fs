@@ -35,10 +35,12 @@ int create_block(FILE* fl, int64_t block_ind){
         create_superblock(fl);
         create_gdt(fl);
     }
-    // create bitmaps and table
-    create_blocks_bitmap(fl);
-    create_inodes_bitmap(fl);
-    create_inodes_table(fl);
+    else{
+        // create bitmaps and table
+        create_blocks_bitmap(fl);
+        create_inodes_bitmap(fl);
+        create_inodes_table(fl);
+    }
 
     return 0;
 }
@@ -48,8 +50,10 @@ int create_superblock(FILE* fl){
 
     sb.ant_blocks_cnt = help_data.blocks_cnt;
     sb.ant_free_blocks = help_data.blocks_cnt;
+    // TODO: think about it
     sb.ant_free_inodes = 0;
-    sb.ant_gblock_sz = help_data.block_sz;
+    sb.ant_gblock_sz = help_data.block_sz;  
+    // TODO: think about it
     sb.ant_inodes_cnt = 0;
     sb.last_mount_tm = ctime(null);
     sb.last_written_tm = ctime(null);
@@ -59,11 +63,21 @@ int create_superblock(FILE* fl){
 }
 
 int create_gdt(FILE* fl){
+    int rows = (help_data.block_sz - sizeof(ant_superblock)) / sizeof(ant_gdt_record);
+    for(int row_ind = 0; row_ind < rows; ++row_ind){
+        ant_gdt_record record;
+
+        record.addr_inodes_bitmap = 0;
+        record.addr_inodes_table = 0;
+        record.block_status = FREE;
+
+        fwrite(&record, sizeof(record), 1, fl);
+    }
 
     return 0;
 }
 /////////////////////////////////////////////////////////////////////
-//                      BLOCKS HELPERS
+//                      BLOCKS BITMAP HELPERS
 /////////////////////////////////////////////////////////////////////
 int create_blocks_bitmap(FILE* fl){
 

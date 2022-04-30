@@ -23,11 +23,19 @@ typedef signed char   byte;
 #define CMD_STR_SZ 64
 // basic fs name size
 #define FS_NAME 64
+#define FL_NAME 32
 // basic path size
 #define PATH_SZ 1024
 // basic blocks size
 #define DEFAULT_BLOCKS_SZ 1024
 // basic MBR_SIZE
 #define MBR_SZ 1024
+
+
+enum block_status{
+    FREE,
+    USED,
+    FULL
+};
 
 #endif // DEFINES_H

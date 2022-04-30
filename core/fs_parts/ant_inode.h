@@ -4,8 +4,6 @@
 #include <stdint.h>
 #include "../defines.h"
 
-#define MAX_LEN 32
-
 // 1 BYTE
 typedef struct mode{
     char type : 2;
@@ -14,7 +12,7 @@ typedef struct mode{
 } mode;
 
 // based on ext2 fs
-// 160 BYTES
+// 88 BYTES
 typedef struct ant_inode {
     // name and access
     char ant_name[MAX_LEN];
@@ -23,8 +21,9 @@ typedef struct ant_inode {
     //  GRP | USER| TYPE
     mode ant_mode;
     // pointers to data
-    void* direct_pointers[12];
-    void* single_indirect_pnt;
+    int16_t direct_pointers[14];
+    int16_t single_indirect_pnt;
+    int64_t indirect_block_ind; 
     // dates
     int32_t ant_dt_create;
     int32_t ant_dt_modif;
