@@ -55,10 +55,10 @@ int create_block(FILE* fl, int64_t block_ind){
         create_inodes_bitmap(fl);
         create_inodes_table(fl);
 
-        int offset = BYTES_1KB - 
-                     sizeof(ant_blocks_bitmaps) +
+        unsigned int offset = BYTES_1KB - 
+                     (sizeof(ant_blocks_bitmaps) +
                      sizeof(ant_inode_bitmaps) +
-                     sizeof(ant_inode) * 11;
+                     sizeof(ant_inode) * 11);
 
         create_empty_offset(fl, offset);
         create_data_section(fl, (help_data.block_sz - 1) * BYTES_1KB);

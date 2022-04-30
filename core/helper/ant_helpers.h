@@ -17,7 +17,8 @@ typedef struct ant_help_data{
     int block_sz;
 } ant_help_data;
 
-static ant_help_data help_data;
+// global variable
+ant_help_data help_data;
 ////////////////////////////
 //      global helper
 ////////////////////////////

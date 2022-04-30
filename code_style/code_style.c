@@ -22,9 +22,6 @@
         data_1,
         data_2
     };
-	
-	
-
 
 6. Циклы
 6.1 while (sum < const){ 
