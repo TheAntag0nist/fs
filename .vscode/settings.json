@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "ant_super.h": "c"
+        "ant_super.h": "c",
+        "stdint.h": "c"
     }
 }
